@@ -12,7 +12,7 @@ e.emp_no = s.emp_no;
 
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE hire_date BETWEEN '1986-01-01' AND '12-31-1986';
+WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
 --List the manager of each department with the following 
 --information: department number, department name,
