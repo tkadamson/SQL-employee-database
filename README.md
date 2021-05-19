@@ -20,39 +20,37 @@ First, I ran only the CREATE TABLE statements to ensure that each table was prop
 #### SQL Queries
 After generating the complete databse in PostgreSQL, I began working on the specific queries. The instructions for each query are list below along with my thought process behind completing each. The SQL code can be found in the queries.sql file.
 
-1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+**1. List the following details of each employee: employee number, last name, first name, sex, and salary.**
      
-     This required joining the employee and salary tables to get the necessary fields for the query.
+This required joining the employee and salary tables to get the necessary fields for the query.
 
-2. List first name, last name, and hire date for employees who were hired in 1986.
-     
-     This required the employees table and a WHERE BETWEEN  statement to limit the query to the specified date range. 
+**2. List first name, last name, and hire date for employees who were hired in 1986.**
 
-3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+This required the employees table and a WHERE BETWEEN  statement to limit the query to the specified date range. 
+
+**3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.**
       
-      This required a double join consisting of the following tables: dept_manager, employees, and departments for the query.
+This required a double join consisting of the following tables: dept_manager, employees, and departments for the query.
 
-4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+**4. List the department of each employee with the following information: employee number, last name, first name, and department name.**
       
-      This required a double join consisting of the following tables: dept_emp, employees, and departments for the query. Dept_emp served as the junction 
-      between employyes and departments
+This required a double join consisting of the following tables: dept_emp, employees, and departments for the query. Dept_emp served as the junction between employees and departments
 
-5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
-    
-    This required a WHERE statement specifying the first name and a LIKE statement with a wildcard to get all 'B' last names.
+**5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."**
 
-6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
-    
-    This query was the same as query 4, with a WHERE statment to narrow to only the Sales Department.
+This required a WHERE statement specifying the first name and a LIKE statement with a wildcard to get all 'B' last names.
 
-7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+**6. List all employees in the Sales department, including their employee number, last name, first name, and department name.**
     
-    This query was the same as query 6, adding Development to the WHERE clause.
+This query was the same as query 4, with a WHERE statment to narrow to only the Sales Department.
+
+**7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.**
     
-8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+This query was the same as query 6, adding Development to the WHERE clause.
     
-    This required the last name column and a COUNT statment to group all employees by last name. Lastly, it requred an ORDER BY statement to get the results listed
-    in decending order
+**8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.**
+    
+This required the last name column and a COUNT statment to group all employees by last name. Lastly, it requred an ORDER BY statement to get the results listed in decending order
     
 #### Analysis in Pandas
 Using SQLAlchemy, I generated an engine that connected Python to my Postrgres databse. From there, I imported the necessary tables to create two graphs: a histogram of salaries and a bar graph of average salery by title. 
